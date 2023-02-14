@@ -33,4 +33,6 @@ curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 
 systemctl enable --now docker
 
+apt install wget
+
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
