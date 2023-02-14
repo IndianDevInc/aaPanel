@@ -11,9 +11,7 @@ LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
 # Download certificate and key from the customer portal (https://account.f5.com)
 # and copy to the build context
-RUN --mount=type=secret,id=nginx-crt,dst=nginx-repo.crt \
-    --mount=type=secret,id=nginx-key,dst=nginx-repo.key \
-    set -x \
+RUN set -x \
 # Create nginx user/group first, to be consistent throughout Docker variants
     && addgroup --system --gid 101 nginx \
     && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx \
